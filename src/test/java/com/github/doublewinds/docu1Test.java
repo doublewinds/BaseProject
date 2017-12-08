@@ -16,6 +16,7 @@ public class docu1Test {
         // Assert
         Assert.assertEquals("不是三角形", result);
     }
+    @Test
     public void getType1() throws Exception {
         // Arrange
         docu1 triangle = new docu1(3, 4, 5);
@@ -26,6 +27,7 @@ public class docu1Test {
         // Assert
         Assert.assertEquals("直角三角形", result);
     }
+    @Test
     public void getType2() throws Exception {
         // Arrange
         docu1 triangle = new docu1(3, 4, 4);
@@ -36,6 +38,7 @@ public class docu1Test {
         // Assert
         Assert.assertEquals("銳角三角形", result);
     }
+    @Test
     public void getType3() throws Exception {
         // Arrange
         docu1 triangle = new docu1(7, 4, 4);
