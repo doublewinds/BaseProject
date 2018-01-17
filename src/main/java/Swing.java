@@ -11,11 +11,12 @@ import javax.swing.*;
 public class Swing extends JFrame {
 	private boolean cb1_state=false,cb2_state=false,cb3_state=false,cb4_state=false;
  	private int custom_time=5,custom_db=70;
+ 	public int PanelFlag = 0;
  	JLabel dbData;
  	String status = "吸音板狀態:OFF\n錄音機狀態:OFF\n音響狀態:OFF\n錄影機狀態:OFF\n\n現在音量:0 db\n\n設定取樣週期:5 min\n設定音量上限:70 db";
  	JTextArea textarea = new JTextArea(status);
  	
-	Swing(AcousticPanel AP){
+	Swing(){
 		super("<超稀有+99不可突破> 反惱人鄰居系統");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(700,500);
@@ -89,13 +90,13 @@ public class Swing extends JFrame {
 					break;
 				case "吸音板啟動":
 					cb1.setSelected(false);
-					AP.Panel_ON();
-					JOptionPane.showMessageDialog(null,"吸音板已啟動，請耐心等候");
+					PanelFlag = 1;
+					System.out.println("吸音板已啟動");
 					break;
 				case "吸音板關閉":
 					cb1.setSelected(false);
-					AP.Panel_OFF();
-					JOptionPane.showMessageDialog(null,"吸音板已關閉，請耐心等候");
+					PanelFlag = 2;
+					System.out.println("吸音板已關閉");
 					break;
 				}
 			}	
