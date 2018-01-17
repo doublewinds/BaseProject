@@ -12,10 +12,13 @@ public class Swing extends JFrame {
 	private boolean cb1_state=false,cb2_state=false,cb3_state=false,cb4_state=false;
  	private int custom_time=5,custom_db=70;
  	JLabel dbData;
+ 	String status = "吸音板狀態:OFF\n錄音機狀態:OFF\n音響狀態:OFF\n錄影機狀態:OFF\n\n現在音量:0 db\n\n設定取樣週期:5 min\n設定音量上限:70 db";
+ 	JTextArea textarea = new JTextArea(status);
+ 	
 	Swing(AcousticPanel AP){
-		super("System");
+		super("<超稀有+99不可突破> 反惱人鄰居系統");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(500,200);
+		setSize(700,500);
 		/*****************宣告元件********************/
 		JCheckBox cb1 = new JCheckBox("自動開關吸音板"),
 				  cb2 = new JCheckBox("自動檢舉"),
@@ -26,10 +29,8 @@ public class Swing extends JFrame {
 		JButton panel_ON = new JButton("吸音板啟動");
 		JButton panel_OFF = new JButton("吸音板關閉");
 		
-		JLabel dbTitle = new JLabel("現在分貝：",JLabel.RIGHT);
-		dbTitle.setFont(new Font("",Font.BOLD,30));
-		JLabel dbData = new JLabel("0",JLabel.CENTER);
-		dbData.setFont(new Font("",Font.PLAIN,30));
+		JLabel lb1 = new JLabel("功能列表");
+		JLabel lb2 = new JLabel("狀態監視窗");
 		/*****************宣告元件********************/
 		/*****************監聽器********************/
 		ItemListener cblistener = new ItemListener() {
@@ -41,7 +42,6 @@ public class Swing extends JFrame {
 					switch(target) {
 					case "自動開關吸音板":
 						cb1_state = true;
-						AP.execute();
 						break;
 					case "自動檢舉":
 						cb2_state = true;
@@ -57,7 +57,6 @@ public class Swing extends JFrame {
 					switch(target) {
 					case "自動開關吸音板":
 						cb1_state = false;
-						AP.terminate();
 						break;
 					case "自動檢舉":
 						cb2_state = false;
@@ -90,10 +89,12 @@ public class Swing extends JFrame {
 					break;
 				case "吸音板啟動":
 					cb1.setSelected(false);
+					AP.Panel_ON();
 					JOptionPane.showMessageDialog(null,"吸音板已啟動，請耐心等候");
 					break;
 				case "吸音板關閉":
 					cb1.setSelected(false);
+					AP.Panel_OFF();
 					JOptionPane.showMessageDialog(null,"吸音板已關閉，請耐心等候");
 					break;
 				}
@@ -105,28 +106,43 @@ public class Swing extends JFrame {
 		/*****************監聽器********************/
 		/*****************Layout設定********************/
 		Container cp = getContentPane();
-		Box box_cb = new Box(BoxLayout.X_AXIS);
-		box_cb.add(cb1);
-		box_cb.add(Box.createHorizontalGlue());
-		box_cb.add(cb2);
-		box_cb.add(Box.createHorizontalGlue());
-		box_cb.add(cb3);
-		box_cb.add(Box.createHorizontalGlue());
-		box_cb.add(cb4);
-		cp.setLayout(new GridLayout(4,1,10,10));
-		cp.add(box_cb);
+		cp.setLayout(null);
 		
-		Box box_btnpanel = new Box(BoxLayout.X_AXIS);
-		box_btnpanel.add(panel_ON);
-		box_btnpanel.add(panel_OFF);
-		cp.add(box_btnpanel);
+		lb1.setBounds(10, 10, 200, 30);
+		lb2.setBounds(400,10,200,30);
+		lb1.setFont(new Font("Time New Roman",Font.BOLD,30));
+		lb2.setFont(new Font("Time New Roman",Font.BOLD,30));
 		
-		Box box_db = new Box(BoxLayout.X_AXIS);
-		box_db.add(dbTitle);
-		box_db.add(dbData);
-		cp.add(box_db);
+		cb1.setBounds(10, 50, 200,20);
+		cb2.setBounds(10, 80, 200,20);
+		cb3.setBounds(10, 110, 200,20);
+		cb4.setBounds(10, 140, 200,20);
+		cb1.setFont(new Font("Time New Roman",Font.PLAIN,20));
+		cb2.setFont(new Font("Time New Roman",Font.PLAIN,20));
+		cb3.setFont(new Font("Time New Roman",Font.PLAIN,20));
+		cb4.setFont(new Font("Time New Roman",Font.PLAIN,20));
 		
+		textarea.setBounds(380, 50, 210, 250);
+		textarea.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		
+		setting.setBounds(10, 280, 150, 30);
+		panel_ON.setBounds(10, 200, 150, 30);
+		panel_OFF.setBounds(10, 230, 150, 30);
+		setting.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		panel_ON.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		panel_OFF.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		
+		cp.add(lb1);
+		cp.add(lb2);
+		cp.add(cb1);
+		cp.add(cb2);
+		cp.add(cb3);
+		cp.add(cb4);
+		cp.add(textarea);
 		cp.add(setting);
+		cp.add(panel_ON);
+		cp.add(panel_OFF);
+		
 		/*****************Layout設定********************/
 		setVisible(true);
 	}
@@ -148,7 +164,7 @@ public class Swing extends JFrame {
 	public int getcustom_db() {
 		return custom_db;
 	}
-	public void changedbData(String s) {
-		dbData.setText(s);
+	public void showStatus(String s) {
+		textarea.setText(s);
 	}
 }
