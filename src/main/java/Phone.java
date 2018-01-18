@@ -8,6 +8,7 @@ public class Phone extends Thread
 		if(decibel>=70)
 		{
 			time++;
+			gap=0;
 		}
 		else 
 		{	
@@ -27,9 +28,9 @@ public class Phone extends Thread
 	}
 	public void outnumber()
 	{
-		phonenum[0]="¥ş°êÀô«O³ø®×±M½u:0800-066666";
-		phonenum[1]="¥x¤¤¥«Àô«O§½ÀËÁ|¹q¸Ü:04-22291747";
-		phonenum[2]="Ä«ªGÃz®Æ¹q¸Ü:0809-012-555";
+		phonenum[0]="å…¨åœ‹ç’°ä¿å ±æ¡ˆå°ˆç·š:0800-066666";
+		phonenum[1]="å°ä¸­å¸‚ç’°ä¿å±€æª¢èˆ‰é›»è©±:04-22291747";
+		phonenum[2]="è˜‹æœçˆ†æ–™é›»è©±:0809-012-555";
 		JOptionPane.showMessageDialog(null, phonenum );
 	}
 }
