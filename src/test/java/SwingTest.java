@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import main.*;
+import GUI.Swing;
 
 public class SwingTest {
 
