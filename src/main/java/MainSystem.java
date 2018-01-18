@@ -1,23 +1,23 @@
 import Function.*;
 import GUI.Swing;
-import Hardware.AcousticPanel;
+import Hardware.*;
 
 public class MainSystem {
 	//GUI及各項功能
-	static Swing frame;
-	static SoundMeterMonitor smm;
-	static AcousticPanel ap;
-	static Reporter rp;
-	static VoiceCounter vc;
-	static Community com;
+	public static Swing frame;
+	public static SoundMeterMonitor smm;
+	public static AcousticPanel ap;
+	public static Reporter rp;
+	public static VoiceCounter vc;
+	public static Community com;
 	//各功能流程計數器
-	static int rpPC = 0;
-	static int vcPC = 0;
-	static int comPC = 0;
+	public static int rpPC = 0;
+	public static int vcPC = 0;
+	public static int comPC = 0;
 	//超標判斷暫存
-	static boolean judge= false;
+	public static boolean judge= false;
 	//系統狀態
-	static String status = "主系統啟動中...";
+	public static String status = "主系統啟動中...";
 	//主程式進入點
 	public static void main(String[] args) {
 		frame = new Swing();
