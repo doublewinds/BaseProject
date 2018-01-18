@@ -43,6 +43,36 @@ public class Reportertest
 				gapresult[times]=0;
 			}
 		}	*/
+		/*for(int times=0;times<30;times++)
+		{
+			decible[times]=test;
+			test++;
+			if(times<5)
+			{
+				timeresult[times]=0;
+				gapresult[times]=resultg;
+				resultg++;
+				if(resultg==3)
+				{
+					resultg=0;
+				}
+			}
+			else 
+			{
+				timeresult[times]=resultt;
+				gapresult[times]=0;
+				resultt++;
+				if(resultt==20)
+				{
+					resultt=0;
+				}
+			}
+		}*/
+	}
+	@Test
+	public void test() throws Exception
+	{
+		//value();
 		for(int times=0;times<30;times++)
 		{
 			decible[times]=test;
@@ -68,11 +98,6 @@ public class Reportertest
 				}
 			}
 		}
-	}
-	@Test
-	public void test() throws Exception
-	{
-		value();
 		Reporter  rp = new Reporter();
 		for(int times=0;times<30;times++)
 		{
@@ -83,7 +108,32 @@ public class Reportertest
 	@Test
 	public void test2() throws Exception
 	{	
-		value();
+		//value();
+		for(int times=0;times<30;times++)
+		{
+			decible[times]=test;
+			test++;
+			if(times<5)
+			{
+				timeresult[times]=0;
+				gapresult[times]=resultg;
+				resultg++;
+				if(resultg==3)
+				{
+					resultg=0;
+				}
+			}
+			else 
+			{
+				timeresult[times]=resultt;
+				gapresult[times]=0;
+				resultt++;
+				if(resultt==20)
+				{
+					resultt=0;
+				}
+			}
+		}
 		Reporter rp = new Reporter();
 		for(int times=0;times<30;times++)
 		{
