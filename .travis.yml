@@ -4,8 +4,6 @@ before_install:
   - chmod +x gradlew
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-install:
-  -travis_wait 10 mvn install
 after_success:
   - ./gradlew jacocoTestReport
   - bash <(curl -s https://codecov.io/bash)
