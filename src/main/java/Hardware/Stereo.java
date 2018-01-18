@@ -2,14 +2,14 @@ package Hardware;
 
 public class Stereo {
 	
-	public String status = "‘Ò‹@";
+	public String status = "å¾…æ©Ÿ";
 	
 	public void start() {
-		status = "”d•ú’†";
+		status = "æ’­æ”¾ä¸­";
 	}
 	
 	public void stop() {
-		status = "‘Ò‹@";
+		status = "å¾…æ©Ÿ";
 	}
 
 }
