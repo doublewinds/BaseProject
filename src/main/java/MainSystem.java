@@ -2,11 +2,10 @@
 public class MainSystem {
 	static Swing frame;
 	public static void main(String[] args) {
-		AcousticPanel AP = new AcousticPanel();
-		frame = new Swing(AP);
+		frame = new Swing();
 		}
 	public static boolean customJudge() {
-		int time = frame.getcustom_time()*60;   //§â per60s ´«¦¨ per1s
+		int time = frame.getcustom_time()*60;   //Â§Ã¢ per60s Â´Â«Â¦Â¨ per1s
 		int decibel = frame.getcustom_db();
 		int exceeded = 0;
 		SoundMeterMonitor sm = new SoundMeterMonitor();
