@@ -16,32 +16,6 @@ public class Phontest
 		{
 			decible[times]=test;
 			test++;
-			if(times<20)
-			{
-				timeresult[times]=0;
-				gapresult[times]=resultg;
-				resultg++;
-				if(resultg==3)
-				{
-					resultg=0;
-				}
-			}
-			else if(times>19&&times<139)
-			{
-				timeresult[times]=resultt;
-				resultt++;
-				if(times==138)
-				{
-					resultt=0;
-				}
-				gapresult[times]=0;
-			}
-			else
-			{
-				timeresult[times]=resultt;
-				resultt++;
-				gapresult[times]=0;
-			}
 		}	
 		Phone ph = new Phone();
 		for(int times=0;times<150;times++)
