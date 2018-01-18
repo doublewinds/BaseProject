@@ -4,9 +4,11 @@ public class Reporter
 {
 	String[] phonenum=new String[3];
 	int time=0,gap=0;
+	boolean judge;
 	
-	public void rulejudge(int decibel)
+	public boolean rulejudge(int decibel)
 	{
+		judge=false;
 		if(decibel>=70)
 		{
 			time++;
@@ -25,14 +27,16 @@ public class Reporter
 		{
 			time=0;
 			gap=0;
-			outnumber();
+			judge=true;
 		}
+		return judge;
 	}
 	
 	public void reset()
 	{
 		time=0;
 		gap=0;
+		judge=false;
 	}
 	
 	public void outnumber()
