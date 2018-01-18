@@ -1,11 +1,11 @@
 package Hardware;
 import java.util.Random;
-//•ªŠLŒv–Í‹[Ší
+//åˆ†è²è¨ˆæ¨¡æ“¬å™¨
 public class SoundMeter {
-	//é˜ªÉ˜Òác¬•ªŠLŒvæ¤É
+	//å»ºç«‹äº‚æ•¸ä½œç‚ºåˆ†è²è¨ˆè®€æ•¸
 	Random decibel = new Random();
 	
-	//›’˜ªÉìˆ×‰¹—Ê‰ñ™B
+	//å–å¾—äº‚æ•¸ä½œç‚ºè®€æ•¸å›å‚³
 	public int getData() {
 		return decibel.nextInt(70)+20;
 	}
