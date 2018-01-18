@@ -65,5 +65,4 @@ public class Phontest
 			Assert.assertEquals(gapresult[times], ph.gap);
 		}
 	}
-
 }
