@@ -9,7 +9,7 @@ public class Phontest
 	int timeresult []=new int[150];
 	int gapresult []=new int[150];
 	int test=50,resultt=1,resultg=1;
-	public void  value()
+	public void value()
 	{
 		for(int times=0;times<150;times++)
 		{
@@ -51,9 +51,8 @@ public class Phontest
 		for(int times=0;times<150;times++)
 		{
 			ph.rulejudge(decible[times]);
-			System.out.println(ph.time+"," +ph.gap);
+			Assert.assertEquals(timeresult[times], ph.time);
 		}
-		Assert.assertEquals(10, ph.time);
 	}
 	@Test
 	public void test2() throws Exception
@@ -63,9 +62,8 @@ public class Phontest
 		for(int times=0;times<150;times++)
 		{
 			ph.rulejudge(decible[times]);
-			System.out.println(ph.time+"," +ph.gap);
+			Assert.assertEquals(gapresult[times], ph.gap);
 		}
-		Assert.assertEquals(0, ph.gap);
 	}
 
 }
