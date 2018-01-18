@@ -10,30 +10,31 @@ import javax.swing.*;
 
 public class Swing extends JFrame {
 	private boolean cb1_state=false,cb2_state=false,cb3_state=false,cb4_state=false;
- 	private int custom_time=5,custom_db=70;
+ 	private int custom_time=5;
+	private int custom_db=70;
  	public int PanelFlag = 0;
  	JLabel dbData;
- 	String status = "§l­µªOª¬ºA:OFF\n¿ı­µ¾÷ª¬ºA:OFF\n­µÅTª¬ºA:OFF\n¿ı¼v¾÷ª¬ºA:OFF\n\n²{¦b­µ¶q:0 db\n\n³]©w¨ú¼Ë¶g´Á:5 min\n³]©w­µ¶q¤W­­:70 db";
+ 	String status = "å¸éŸ³æ¿ç‹€æ…‹:OFF\néŒ„éŸ³æ©Ÿç‹€æ…‹:OFF\néŸ³éŸ¿ç‹€æ…‹:OFF\néŒ„å½±æ©Ÿç‹€æ…‹:OFF\n\nç¾åœ¨éŸ³é‡:0 db\n\nè¨­å®šå–æ¨£é€±æœŸ:5 min\nè¨­å®šéŸ³é‡ä¸Šé™:70 db";
  	JTextArea textarea = new JTextArea(status);
  	
 	Swing(){
-		super("<¶Wµ}¦³+99¤£¥i¬ğ¯}> ¤Ï´o¤H¾F©~¨t²Î");
+		super("<è¶…ç¨€æœ‰+99ä¸å¯çªç ´> åæƒ±äººé„°å±…ç³»çµ±");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(700,500);
-		/*****************«Å§i¤¸¥ó********************/
-		JCheckBox cb1 = new JCheckBox("¦Û°Ê¶}Ãö§l­µªO"),
-				  cb2 = new JCheckBox("¦Û°ÊÀËÁ|"),
-				  cb3 = new JCheckBox("­µ¶q¤ÏÀ»"),
-				  cb4 = new JCheckBox("¾a¥_ªÀ¸s¤ÏÀ»");
+		/*****************å®£å‘Šå…ƒä»¶********************/
+		JCheckBox cb1 = new JCheckBox("è‡ªå‹•é–‹é—œå¸éŸ³æ¿"),
+				  cb2 = new JCheckBox("è‡ªå‹•æª¢èˆ‰"),
+				  cb3 = new JCheckBox("éŸ³é‡åæ“Š"),
+				  cb4 = new JCheckBox("é åŒ—ç¤¾ç¾¤åæ“Š");
 		
-		JButton setting = new JButton("³]©w");
-		JButton panel_ON = new JButton("§l­µªO±Ò°Ê");
-		JButton panel_OFF = new JButton("§l­µªOÃö³¬");
+		JButton setting = new JButton("è¨­å®š");
+		JButton panel_ON = new JButton("å¸éŸ³æ¿å•Ÿå‹•");
+		JButton panel_OFF = new JButton("å¸éŸ³æ¿é—œé–‰");
 		
-		JLabel lb1 = new JLabel("¥\¯à¦Cªí");
-		JLabel lb2 = new JLabel("ª¬ºAºÊµøµ¡");
-		/*****************«Å§i¤¸¥ó********************/
-		/*****************ºÊÅ¥¾¹********************/
+		JLabel lb1 = new JLabel("åŠŸèƒ½åˆ—è¡¨");
+		JLabel lb2 = new JLabel("ç‹€æ…‹ç›£è¦–çª—");
+		/*****************å®£å‘Šå…ƒä»¶********************/
+		/*****************ç›£è½å™¨********************/
 		ItemListener cblistener = new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
@@ -41,31 +42,31 @@ public class Swing extends JFrame {
 				String target = cbSourse.getActionCommand();
 				if(e.getStateChange( )== ItemEvent.SELECTED)
 					switch(target) {
-					case "¦Û°Ê¶}Ãö§l­µªO":
+					case "è‡ªå‹•é–‹é—œå¸éŸ³æ¿":
 						cb1_state = true;
 						break;
-					case "¦Û°ÊÀËÁ|":
+					case "è‡ªå‹•æª¢èˆ‰":
 						cb2_state = true;
 						break;
-					case "­µ¶q¤ÏÀ»":
+					case "éŸ³é‡åæ“Š":
 						cb3_state = true;
 						break;
-					case "¾a¥_ªÀ¸s¤ÏÀ»":
+					case "é åŒ—ç¤¾ç¾¤åæ“Š":
 						cb4_state = true;
 						break;
 					}
 				else if(e.getStateChange() == ItemEvent.DESELECTED)
 					switch(target) {
-					case "¦Û°Ê¶}Ãö§l­µªO":
+					case "è‡ªå‹•é–‹é—œå¸éŸ³æ¿":
 						cb1_state = false;
 						break;
-					case "¦Û°ÊÀËÁ|":
+					case "è‡ªå‹•æª¢èˆ‰":
 						cb2_state = false;
 						break;
-					case "­µ¶q¤ÏÀ»":
+					case "éŸ³é‡åæ“Š":
 						cb3_state = false;
 						break;
-					case "¾a¥_ªÀ¸s¤ÏÀ»":
+					case "é åŒ—ç¤¾ç¾¤åæ“Š":
 						cb4_state = false;
 						break;
 					}
@@ -82,21 +83,21 @@ public class Swing extends JFrame {
 				JButton btnSourse = (JButton)e.getSource();
 				String target = btnSourse.getActionCommand();
 				switch(target) {
-				case "³]©w":
-					String time = JOptionPane.showInputDialog("½Ğ¿é¤J¨ú¼Ë¶g´Á ³æ¦ì:¤ÀÄÁ");
-					custom_time = Integer.parseInt(time);
-					String db = JOptionPane.showInputDialog("½Ğ¿é¤J­µ¶q¤W­­ ³æ¦ì:db");
-					custom_db = Integer.parseInt(db);
+				case "è¨­å®š":
+					String time = JOptionPane.showInputDialog("è«‹è¼¸å…¥å–æ¨£é€±æœŸ å–®ä½:åˆ†é˜");
+					timeSet(time);
+					String db = JOptionPane.showInputDialog("è«‹è¼¸å…¥éŸ³é‡ä¸Šé™ å–®ä½:db");
+					dbSet(db);
 					break;
-				case "§l­µªO±Ò°Ê":
+				case "å¸éŸ³æ¿å•Ÿå‹•":
 					cb1.setSelected(false);
 					PanelFlag = 1;
-					System.out.println("§l­µªO¤w±Ò°Ê");
+					System.out.println("å¸éŸ³æ¿å·²å•Ÿå‹•");
 					break;
-				case "§l­µªOÃö³¬":
+				case "å¸éŸ³æ¿é—œé–‰":
 					cb1.setSelected(false);
 					PanelFlag = 2;
-					System.out.println("§l­µªO¤wÃö³¬");
+					System.out.println("å¸éŸ³æ¿å·²é—œé–‰");
 					break;
 				}
 			}	
@@ -104,8 +105,8 @@ public class Swing extends JFrame {
 		setting.addActionListener(buttonlistener);
 		panel_ON.addActionListener(buttonlistener);
 		panel_OFF.addActionListener(buttonlistener);
-		/*****************ºÊÅ¥¾¹********************/
-		/*****************Layout³]©w********************/
+		/*****************ç›£è½å™¨********************/
+		/*****************Layoutè¨­å®š********************/
 		Container cp = getContentPane();
 		cp.setLayout(null);
 		
@@ -144,7 +145,7 @@ public class Swing extends JFrame {
 		cp.add(panel_ON);
 		cp.add(panel_OFF);
 		
-		/*****************Layout³]©w********************/
+		/*****************Layoutè¨­å®š********************/
 		setVisible(true);
 	}
 	public boolean getcb1() {
@@ -167,5 +168,27 @@ public class Swing extends JFrame {
 	}
 	public void showStatus(String s) {
 		textarea.setText(s);
+	}
+	public void timeSet(String s) {
+		try {
+		int time = Integer.parseInt(s);
+		if(time<=0 || time>10)
+			System.out.println("è«‹è¼¸å…¥1~10");
+		else
+			custom_time = time;
+		}catch(NumberFormatException e) {
+			System.out.println("è¼¸å…¥å¤±æ•—");
+		}
+	}
+	public void dbSet(String s) {
+		try {
+			int db = Integer.parseInt(s);
+			if(db<=0)
+				System.out.println("è«‹è¼¸å…¥æ­£æ•´æ•¸");
+			else
+				custom_db = db;
+			}catch(NumberFormatException e) {
+				System.out.println("è¼¸å…¥å¤±æ•—");
+			}
 	}
 }

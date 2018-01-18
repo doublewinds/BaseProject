@@ -1,7 +1,8 @@
-
 public class Camera extends Thread{
+	String cameraStatus = "å¾…æ©Ÿ";
 	public void film_start(){
-		System.out.println("¶}©l¿ı¼v");
+		System.out.println("é–‹å§‹éŒ„å½±");
+		cameraStatus = "éŒ„å½±ä¸­";
 		try {
 			sleep(5000);
 		} catch (InterruptedException e) {
@@ -11,11 +12,14 @@ public class Camera extends Thread{
 		film_stop();
 	}
 	public void film_stop(){
-		System.out.println("µ²§ô¿ı¼v");
+		System.out.println("çµæŸéŒ„å½±");
+		cameraStatus = "å¾…æ©Ÿ";
 		SAVE();
 	}
 	public void SAVE(){
-		System.out.println("¤w±N¼v¤ù¦s¦b®à­±");
+		System.out.println("å·²å°‡å½±ç‰‡å­˜åœ¨æ¡Œé¢");
+	}
+	public String get_status() {
+		return cameraStatus;
 	}
 }
-
