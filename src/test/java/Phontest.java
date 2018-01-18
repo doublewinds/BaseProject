@@ -9,7 +9,6 @@ public class Phontest
 	int timeresult []=new int[150];
 	int gapresult []=new int[150];
 	int test=50,resultt=1,resultg=1;
-	@SuppressWarnings("deprecation")
 	@Test
 	public void test() throws Exception
 	{
@@ -53,5 +52,4 @@ public class Phontest
 			Assert.assertEquals(gapresult[times], ph.gap);
 		}
 	}
-
 }
