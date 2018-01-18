@@ -17,7 +17,7 @@ public class Swing extends JFrame {
 	public Swing(){
 		super("<超稀有+99不可突破> 反惱人鄰居系統"); 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(700,500);
+		setSize(620,350);
 		/*****************宣告元件********************/
 		JCheckBox cb0 = new JCheckBox("啟動監控系統"),
 				  cb1 = new JCheckBox("自動開關吸音板"),
@@ -116,24 +116,24 @@ public class Swing extends JFrame {
 		
 		lb1.setBounds(10, 10, 200, 30);
 		lb2.setBounds(400,10,200,30);
-		lb1.setFont(new Font("Time New Roman",Font.BOLD,30));
-		lb2.setFont(new Font("Time New Roman",Font.BOLD,30));
+		lb1.setFont(new Font("Time New Roman",Font.BOLD,26));
+		lb2.setFont(new Font("Time New Roman",Font.BOLD,26));
 		
 		cb0.setBounds(10, 50, 200,20);
 		cb1.setBounds(10, 80, 200,20);
 		cb2.setBounds(10, 110, 200,20);
 		cb3.setBounds(10, 140, 200,20);
 		cb4.setBounds(10, 170, 200,20);
-		cb0.setFont(new Font("Time New Roman",Font.PLAIN,20));
-		cb1.setFont(new Font("Time New Roman",Font.PLAIN,20));
-		cb2.setFont(new Font("Time New Roman",Font.PLAIN,20));
-		cb3.setFont(new Font("Time New Roman",Font.PLAIN,20));
-		cb4.setFont(new Font("Time New Roman",Font.PLAIN,20));
+		cb0.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		cb1.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		cb2.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		cb3.setFont(new Font("Time New Roman",Font.PLAIN,18));
+		cb4.setFont(new Font("Time New Roman",Font.PLAIN,18));
 		
 		textarea.setBounds(380, 50, 210, 250);
 		textarea.setFont(new Font("Time New Roman",Font.PLAIN,18));
 		
-		setting.setBounds(10, 280, 150, 30);
+		setting.setBounds(10, 270, 150, 30);
 		panel_ON.setBounds(10, 200, 150, 30);
 		panel_OFF.setBounds(10, 230, 150, 30);
 		setting.setFont(new Font("Time New Roman",Font.PLAIN,18));
