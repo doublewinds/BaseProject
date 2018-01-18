@@ -23,7 +23,7 @@ public class Phone extends Thread
 		{
 			time=0;
 			gap=0;
-			outnumber();
+			//outnumber();
 		}
 	}
 	public void outnumber()
