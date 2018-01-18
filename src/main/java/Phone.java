@@ -4,7 +4,7 @@ public class Phone extends Thread
 	String[] phonenum=new String[3];
 	int time=0,gap=0;
 	boolean judge;
-	public void rulejudge(int decibel)
+	public boolean rulejudge(int decibel)
 	{
 		judge=false;
 		if(decibel>=70)
@@ -27,7 +27,7 @@ public class Phone extends Thread
 			gap=0;
 			judge=true;
 		}
-
+		return judge;
 	}
 	public void outnumber()
 	{
