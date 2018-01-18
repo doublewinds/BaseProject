@@ -37,7 +37,7 @@ public class MainSystem {
 					//暫存本次判斷結果避免重複呼叫
 					judge = customJudge();
 					//音量監控系統的控制
-					if(frame.getcb0()) {
+					if(frame.getcb0() && smm.soundMeterIsActive()) {
 						smm.startMonitor();
 					}else {
 						smm.closeMonitor();
@@ -64,7 +64,9 @@ public class MainSystem {
 							rpPC = 2;
 						}
 						if(rpPC == 1) {
-							rp.rulejudge(smm.getData());
+							if(rp.rulejudge(smm.getData())) {
+								rp.outnumber();
+							}
 						}
 					}else {
 						rpPC = 0;
