@@ -3,10 +3,10 @@ public class Phone extends Thread
 {
 	String[] phonenum=new String[3];
 	int time=0,gap=0;
-	boolean i = false;
+	boolean judge = false;
 	public boolean rulejudge(int decibel)
 	{
-		i=false;
+		judge=false;
 		if(decibel>=70)
 		{
 			time++;
@@ -25,15 +25,15 @@ public class Phone extends Thread
 		{
 			time=0;
 			gap=0;
-			i=true;
+			judge=true;
 		}
-		return i;
+		return judge;
 	}
 	public void outnumber()
 	{
-		phonenum[0]="¥ş°êÀô«O³ø®×±M½u:0800-066666";
-		phonenum[1]="¥x¤¤¥«Àô«O§½ÀËÁ|¹q¸Ü:04-22291747";
-		phonenum[2]="Ä«ªGÃz®Æ¹q¸Ü:0809-012-555";
+		phonenum[0]="å…¨åœ‹ç’°ä¿å ±æ¡ˆå°ˆç·š:0800-066666";
+		phonenum[1]="å°ä¸­å¸‚ç’°ä¿å±€æª¢èˆ‰é›»è©±:04-22291747";
+		phonenum[2]="è˜‹æœçˆ†æ–™é›»è©±:0809-012-555";
 		JOptionPane.showMessageDialog(null, phonenum );
 	}
 }
