@@ -64,7 +64,9 @@ public class MainSystem {
 							rpPC = 2;
 						}
 						if(rpPC == 1) {
-							rp.rulejudge(smm.getData());
+							if(rp.rulejudge(smm.getData())) {
+								rp.outnumber();
+							}
 						}
 					}else {
 						rpPC = 0;
