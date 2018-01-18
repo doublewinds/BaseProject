@@ -86,7 +86,7 @@ public class SoundMeterMonitor{
 		}else if(data/10 < 8) {
 			wave = "▇";
 		}else {
-			wave = "█";
+			wave = "▉";
 		}
 		//將舊有資料往前移並加入新資料
 		soundWave = soundWave.substring(1) + wave;
