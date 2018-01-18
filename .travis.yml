@@ -1,4 +1,6 @@
 language: java
+deploy:
+  default_text_charset: 'ms950'
 before_install:
   - chmod +x gradlew
 after_success:
