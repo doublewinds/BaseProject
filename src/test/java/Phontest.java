@@ -48,8 +48,8 @@ public class Phontest
 		{
 			ph.rulejudge(decible[times]);
 			System.out.println(ph.time+"," +ph.gap);
-			Assert.assertEquals(timeresult[times], ph.time);
-			Assert.assertEquals(gapresult[times], ph.gap);
 		}
+		Assert.assertEquals(10, ph.time);
+		Assert.assertEquals(0, ph.gap);
 	}
 }
