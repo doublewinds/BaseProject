@@ -1,12 +1,10 @@
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class SwingTest {
+public class SwingTest {
 
 	@Test
-	void testTimeSet() {
+	public void testTimeSet() throws Exception {
 		Swing sw = new Swing();
 		int temp = sw.getcustom_time();
 		sw.timeSet("100");
@@ -20,7 +18,7 @@ class SwingTest {
 	}
 
 	@Test
-	void testDbSet() {
+	public void testDbSet() throws Exception {
 		Swing sw = new Swing();
 		int temp = sw.getcustom_db();
 		sw.dbSet("-1");
