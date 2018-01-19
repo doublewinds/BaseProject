@@ -19,7 +19,7 @@ public class SoundMeterMonitor{
 	public SoundMeterMonitor() {
 		//初始化陣列內容為-1
 		for(int i=0; i<dataQueue.length; i++) {
-			dataQueue[i] = -1;
+			dataQueue[i] = 0;
 		}
 		//建立物件的同時啟動執行緒
 		new MonitorThread().start();
