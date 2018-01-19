@@ -179,6 +179,23 @@ public class Swing extends JFrame {
 	public void showStatus(String s) {
 		textarea.setText(s);
 	}
+	
+	public void allForcedOn() {
+		cb0_state = true;
+		cb1_state = true;
+		cb2_state = true;
+		cb3_state = true;
+		cb4_state = true;
+	}
+	
+	public void allForcedOff() {
+		cb0_state = false;
+		cb1_state = false;
+		cb2_state = false;
+		cb3_state = false;
+		cb4_state = false;
+	}
+	
 	public void timeSet(String s) {
 		try {
 		int time = Integer.parseInt(s);
