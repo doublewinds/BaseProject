@@ -7,7 +7,7 @@ public class SoundMeter {
 	
 	//取得亂數作為讀數回傳
 	public int getData() {
-		return decibel.nextInt(20)+68;
+		return decibel.nextInt(30)+65;
 	}
 	
 }
