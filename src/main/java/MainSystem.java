@@ -10,6 +10,7 @@ public class MainSystem {
 	public static Reporter rp;
 	public static VoiceCounter vc;
 	public static Community com;
+	public static MainThread MT;
 	//各功能流程計數器
 	public static int rpPC = 0;
 	public static int vcPC = 0;
@@ -26,7 +27,7 @@ public class MainSystem {
 		rp = new Reporter();
 		vc = new VoiceCounter();
 		com = new Community();
-		MainThread MT = new MainThread();
+		MT = new MainThread();
 		MT.start();
 	}
 	//主執行緒
@@ -34,8 +35,7 @@ public class MainSystem {
 		public void run() {
 			while(true) {
 				try {
-					//暫存本次判斷結果避免重複呼叫
-					judge = customJudge();
+					
 					//音量監控系統的控制
 					if(frame.getcb0() && smm.soundMeterIsActive()) {
 						smm.startMonitor();
@@ -112,6 +112,8 @@ public class MainSystem {
 					frame.showStatus(status);
 					//流程計數器倒數
 					allPCDown();
+					//暫存本次判斷結果避免重複呼叫
+					judge = customJudge();
 					//執行緒休眠0.5秒
 					sleep(500);
 				}catch(InterruptedException e) {
