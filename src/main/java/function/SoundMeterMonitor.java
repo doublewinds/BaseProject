@@ -3,7 +3,7 @@ import hardware.SoundMeter;
 //音量監控系統
 public class SoundMeterMonitor{
 	//系統開關
-	private boolean power = true;
+	private boolean power = false;
 	//分貝計連線狀態
 	private boolean soundMeterActive = true;
 	//資料紀錄陣列
