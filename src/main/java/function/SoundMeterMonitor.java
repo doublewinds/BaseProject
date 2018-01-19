@@ -5,7 +5,7 @@ public class SoundMeterMonitor{
 	//系統開關
 	private boolean power = true;
 	//分貝計連線狀態
-	private boolean soundMeterActive = false;
+	private boolean soundMeterActive = true;
 	//資料紀錄陣列
 	private int[] dataQueue = new int[600];
 	//陣列鍵值
